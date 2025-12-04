@@ -1,0 +1,298 @@
+{
+  "pays": "Palaos",
+  "drapeau": "🇵🇼",
+  "symbole": "🌊",
+  "titre": "Palaos : Aventure au cœur du sanctuaire marin",
+  "budget": "6000€",
+  "duree": "14 jours",
+  "temps_vol": "Environ 25-30 heures avec escale(s)",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🛬",
+      "titre": "Arrivée au paradis du Pacifique",
+      "legende": "Après un long voyage depuis Marseille, vous atterrissez enfin sur l'île de Koror, la porte d'entrée des Palaos. Le choc thermique et la beauté luxuriante des paysages vous saisissent immédiatement. Cette première journée est dédiée à l'acclimatation et à une douce immersion dans l'atmosphère paisible de l'île. Reposez-vous et préparez-vous pour l'aventure qui vous attend.",
+      "lieu": "Koror",
+      "activites": [
+        "🛬 <strong>Arrivée et transfert</strong>: Récupérez vos bagages à l'aéroport international Roman Tmetuchl et rejoignez votre hébergement à Koror.",
+        "🚶‍♂️ <strong>Première balade à Koror</strong>: Faites une promenade relaxante pour découvrir les environs de votre hôtel et dînez dans un restaurant local pour goûter aux saveurs du Pacifique."
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "Décalage horaire",
+          "texte": "Le décalage horaire avec la France est de +7 ou +8 heures. Hydratez-vous bien et essayez de vous adapter au rythme local dès le premier jour."
+        },
+        {
+          "symbole": "💵",
+          "titre": "Monnaie",
+          "texte": "Pensez à retirer des dollars américains (USD) à l'aéroport, car les distributeurs peuvent être rares en dehors de Koror."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🗺️",
+      "titre": "Immersion et préparatifs",
+      "legende": "Aujourd'hui, vous plongez dans la culture locale et préparez vos futures excursions marines. C'est le moment idéal pour obtenir les permis nécessaires, visiter un musée fascinant et s'imprégner de l'histoire de l'archipel. La journée se termine par un magnifique coucher de soleil, promesse de découvertes à venir.",
+      "lieu": "Koror",
+      "activites": [
+        "🎟️ <strong>Obtention des permis</strong>: Rendez-vous au centre d'information pour acheter votre permis Rock Islands/Jellyfish Lake, indispensable pour la plupart des excursions.",
+        "🏛️ <strong>Visite du Belau National Museum</strong>: Découvrez l'histoire, la culture et l'art des Palaos dans le plus ancien musée de Micronésie."
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "📝",
+          "titre": "Permis obligatoire",
+          "texte": "Le permis combiné Rock Islands / Jellyfish Lake est valable 10 jours. Conservez-le précieusement, il vous sera demandé à chaque sortie en mer."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "🚤",
+      "titre": "Le Lagon des Rock Islands",
+      "legende": "Embarquez pour votre première grande aventure au cœur du lagon sud des Rock Islands, un site classé au patrimoine mondial de l'UNESCO. Naviguez entre des centaines d'îlots calcaires recouverts de jungle et découvrez des fonds marins d'une richesse inouïe. C'est une journée de pur émerveillement, où chaque arrêt snorkeling révèle un nouvel écosystème coloré.",
+      "lieu": "Rock Islands",
+      "activites": [
+        "🐠 <strong>Snorkeling dans les jardins de corail</strong>: Explorez des sites comme Cemetery Reef, où des milliers de poissons tropicaux évoluent au milieu de coraux préservés.",
+        "🏝️ <strong>Déjeuner sur une plage déserte</strong>: Profitez d'une pause sur un motu (îlot) de sable blanc, un moment privilégié pour savourer un repas face à des eaux turquoise."
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🧴",
+          "titre": "Protection solaire",
+          "texte": "Utilisez une crème solaire respectueuse des coraux (reef-safe) pour protéger à la fois votre peau et l'écosystème marin fragile."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🦈",
+      "titre": "Plongée mythique à Blue Corner",
+      "legende": "Préparez-vous pour une expérience de plongée de renommée mondiale. Aujourd'hui, direction Blue Corner, un plateau océanique où les courants attirent une vie marine spectaculaire. C'est un ballet incessant de requins, de bancs de barracudas et de carangues. Une journée intense qui restera gravée dans votre mémoire de plongeur.",
+      "lieu": "Rock Islands (sites de plongée)",
+      "activites": [
+        "🌊 <strong>Plongée à Blue Corner</strong>: Accrochez-vous à votre crochet de récif et laissez le courant vous présenter un spectacle aquatique incroyable, avec des requins de récif gris patrouillant à quelques mètres.",
+        "🐢 <strong>Exploration de Blue Holes</strong>: Pénétrez dans un système de grottes sous-marines spectaculaire dont le toit s'ouvre sur le ciel, créant des puits de lumière magiques."
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🤿",
+          "titre": "Niveau requis",
+          "texte": "Blue Corner est une plongée dérivante qui requiert un niveau avancé (Advanced Open Water) et une bonne aisance dans les courants."
+        },
+        {
+          "symbole": "📸",
+          "titre": "Photographie",
+          "texte": "Un appareil photo sous-marin est indispensable pour immortaliser la densité de vie marine de ce site exceptionnel."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "✨",
+      "titre": "Voie Lactée et Méduses d'Or",
+      "legende": "Cette journée combine deux des expériences les plus uniques des Palaos. Commencez par un bain de boue thérapeutique dans la \"Voie Lactée\", un lagon aux sédiments blancs réputés pour leurs bienfaits. Poursuivez avec une nage surréaliste au milieu de millions de méduses dorées non urticantes dans le célèbre Lac aux Méduses, un écosystème unique au monde.",
+      "lieu": "Rock Islands",
+      "activites": [
+        "💧 <strong>Bain de boue au Milky Way</strong>: Enduisez-vous de la boue calcaire blanche du fond du lagon, une expérience amusante et un spa naturel à ciel ouvert.",
+        "✨ <strong>Nage au Lac aux Méduses (Jellyfish Lake)</strong>: Vivez un moment magique en flottant paisiblement parmi des milliers de méduses dorées qui suivent la course du soleil."
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "🤫",
+          "titre": "Fragilité",
+          "texte": "Au Lac aux Méduses, ne portez pas de crème solaire et palmez doucement pour ne pas blesser ces créatures extrêmement fragiles."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "🌊",
+      "titre": "Le ballet des raies Manta",
+      "legende": "Retour sous l'eau pour une rencontre majestueuse. Le German Channel, un passage creusé par les Allemands au début du 20ème siècle, est aujourd'hui une \"station de nettoyage\" pour les raies Manta. C'est l'un des meilleurs endroits au monde pour observer ces géants des mers dans leur environnement naturel.",
+      "lieu": "German Channel",
+      "activites": [
+        "Manta <strong>Plongée à German Channel</strong>: Positionnez-vous sur le fond sableux et admirez le ballet gracieux des raies Manta venant se faire déparasiter par de petits poissons labres.",
+        "🐠 <strong>Découverte de Big Drop-Off</strong>: Explorez un mur vertigineux tapissé de gorgones et de coraux mous, offrant un contraste saisissant avec le bleu profond de l'océan."
+      ],
+      "illustration": "jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "🗓️",
+          "titre": "Meilleur moment",
+          "texte": "Les chances d'observer les raies Manta sont plus élevées lors des marées montantes, renseignez-vous auprès de votre centre de plongée."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "🚗",
+      "titre": "L'île sauvage de Babeldaob",
+      "legende": "Quittez le monde marin pour une journée d'exploration terrestre sur Babeldaob, la plus grande île des Palaos. Louez une voiture et parcourez la \"Compact Road\" qui serpente à travers une jungle dense et des villages traditionnels. Découvrez une autre facette de l'archipel, plus sauvage et authentique.",
+      "lieu": "Babeldaob",
+      "activites": [
+        "🗿 <strong>Visite des monolithes de Badrulchau</strong>: Marchez parmi d'anciennes colonnes de basalte mystérieuses, vestiges d'un important centre cérémoniel préhistorique.",
+        "💦 <strong>Randonnée vers la cascade de Ngardmau</strong>: Traversez la jungle luxuriante pour atteindre la plus grande cascade des Palaos, où une baignade rafraîchissante vous attend."
+      ],
+      "illustration": "jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "🚗",
+          "titre": "Location de voiture",
+          "texte": "Louer une voiture est le meilleur moyen d'explorer Babeldaob à votre rythme. La route principale est en excellent état."
+        },
+        {
+          "symbole": "👟",
+          "titre": "Équipement",
+          "texte": "Prévoyez de bonnes chaussures de marche et un anti-moustiques pour la randonnée vers la cascade."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "🛶",
+      "titre": "Kayak au fil de l'eau",
+      "legende": "Découvrez les Rock Islands d'une manière plus intime et silencieuse : en kayak. Pagayez dans des baies abritées, faufilez-vous sous des arches naturelles et explorez des tunnels marins cachés. C'est une journée de connexion profonde avec la nature, loin du bruit des moteurs, où vous pourrez observer la faune et la flore de très près.",
+      "lieu": "Nikko Bay / Risong Bay",
+      "activites": [
+        "🛶 <strong>Exploration de criques secrètes</strong>: Naviguez dans un labyrinthe d'îlots et découvrez des plages accessibles uniquement en kayak.",
+        "🦀 <strong>Observation de la mangrove</strong>: Approchez-vous des écosystèmes de mangrove, nurserie pour de nombreuses espèces marines, et observez les créatures qui y vivent."
+      ],
+      "illustration": "jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "🧭",
+          "titre": "Excursion guidée",
+          "texte": "Optez pour une excursion guidée en kayak pour découvrir les meilleurs spots et en apprendre plus sur la géologie et la biologie des Rock Islands."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🎖️",
+      "titre": "Devoir de mémoire à Peleliu",
+      "legende": "Changez radicalement d'ambiance avec une excursion sur l'île de Peleliu, théâtre de l'une des batailles les plus sanglantes de la Seconde Guerre mondiale dans le Pacifique. Le temps semble s'être arrêté ici. Visitez les vestiges de la guerre, des chars rouillés aux bunkers abandonnés, un témoignage poignant de l'histoire qui contraste avec la beauté naturelle de l'île.",
+      "lieu": "Peleliu",
+      "activites": [
+        "✈️ <strong>Exploration des vestiges de guerre</strong>: Découvrez des chars américains et japonais, des avions abattus et des bunkers envahis par la jungle, conservés comme un mémorial à ciel ouvert.",
+        "📜 <strong>Visite du musée de Peleliu</strong>: Approfondissez vos connaissances sur la \"Bataille de Peleliu\" grâce aux artefacts et aux récits poignants présentés dans ce petit musée."
+      ],
+      "illustration": "jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "😢",
+          "titre": "Respect",
+          "texte": "Peleliu est un lieu de mémoire. Faites preuve de respect en ne touchant à rien et en vous imprégnant du silence des lieux."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "🏖️",
+      "titre": "Détente ou dernière plongée",
+      "legende": "Pour cette journée, deux options s'offrent à vous selon vos envies. Les plongeurs passionnés pourront s'attaquer à Ulong Channel, une autre plongée dérivante spectaculaire. Ceux qui préfèrent se détendre pourront profiter d'une journée de farniente sur une belle plage ou au bord de la piscine de leur hôtel pour recharger les batteries.",
+      "lieu": "Ulong Island / Koror",
+      "activites": [
+        "🌊 <strong>Option 1 - Plongée à Ulong Channel</strong>: Laissez-vous porter par le courant dans ce canal réputé pour ses jardins de coraux laitue géants et ses nombreux requins.",
+        "🍹 <strong>Option 2 - Journée détente</strong>: Profitez des plages de Koror, lisez un livre au bord de la piscine ou offrez-vous un massage pour une journée de pure relaxation."
+      ],
+      "illustration": "jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "⚖️",
+          "titre": "À vous de choisir",
+          "texte": "Écoutez votre corps. Après plusieurs jours d'activités intenses, une journée de repos peut être très bénéfique."
+        }
+      ]
+    },
+    {
+      "jour": 11,
+      "symbole": "🛍️",
+      "titre": "Culture et derniers achats",
+      "legende": "Profitez de cette dernière journée complète pour vous immerger une dernière fois dans la culture paluane et trouver des souvenirs uniques. Visitez un centre culturel pour admirer le savoir-faire des artisans locaux et flânez dans les boutiques de Koror. C'est le moment de choisir les trésors qui vous rappelleront ce voyage inoubliable.",
+      "lieu": "Koror",
+      "activites": [
+        "🎨 <strong>Visite de l'Etpison Museum</strong>: Admirez des expositions d'art et d'artisanat local, et comprenez mieux les traditions et les légendes des Palaos.",
+        "🎁 <strong>Shopping de souvenirs</strong>: Cherchez un \"storyboard\" en bois sculpté, l'artisanat le plus emblématique des Palaos, qui raconte une légende locale."
+      ],
+      "illustration": "jour11.jpg",
+      "encarts": [
+        {
+          "symbole": "🔨",
+          "titre": "Artisanat local",
+          "texte": "Les storyboards sont des pièces uniques. Prenez le temps de discuter avec les artisans pour comprendre l'histoire derrière chaque sculpture."
+        }
+      ]
+    },
+    {
+      "jour": 12,
+      "symbole": "🛫",
+      "titre": "Dernier lever de soleil et départ",
+      "legende": "C'est le jour du départ. Profitez d'un dernier petit-déjeuner face au lagon, en vous remémorant les moments forts de votre aventure. Selon l'horaire de votre vol, vous aurez peut-être le temps pour une dernière baignade. Il est ensuite temps de rejoindre l'aéroport, la tête remplie d'images de requins, de méduses dorées et de paysages à couper le souffle.",
+      "lieu": "Koror",
+      "activites": [
+        "🌅 <strong>Dernier petit-déjeuner tropical</strong>: Savourez les fruits frais et les spécialités locales une dernière fois avec une vue imprenable sur l'océan.",
+        "🛫 <strong>Transfert vers l'aéroport</strong>: Rejoignez l'aéroport international Roman Tmetuchl pour votre vol retour vers Marseille."
+      ],
+      "illustration": "jour12.jpg",
+      "encarts": [
+        {
+          "symbole": "🧳",
+          "titre": "Bagages",
+          "texte": "Vérifiez le poids de vos bagages, surtout si vous avez acheté des souvenirs artisanaux qui peuvent être lourds."
+        }
+      ]
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales pour ce séjour sont les mois de novembre à avril.",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "Climat tropical. Prévoir des vêtements légers, maillots de bain, protection solaire et un vêtement de pluie léger.",
+      "symbole": "🌡️"
+    },
+    {
+      "titre": "La monnaie est le dollar américain (USD). Les cartes de crédit sont acceptées dans les grands hôtels, mais prévoyez du liquide.",
+      "symbole": "💵"
+    },
+    {
+      "titre": "Passeport valide 6 mois après le retour requis. Une taxe environnementale (100$) est à régler à l'arrivée.",
+      "symbole": "🛂"
+    },
+    {
+      "titre": "Le Wi-Fi est souvent lent et coûteux. Pensez à acheter une carte SIM locale à l'arrivée pour un meilleur accès.",
+      "symbole": "📶"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Office du tourisme officiel",
+      "titre": "Pristine Paradise Palau",
+      "url": "https://www.pristineparadisepalau.com/",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Centre de plongée réputé",
+      "titre": "Sam's Tours Palau",
+      "url": "https://www.samstours.com/",
+      "symbole": "🤿"
+    },
+    {
+      "legende": "Conseils aux voyageurs",
+      "titre": "France Diplomatie - Palaos",
+      "url": "https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/palaos/",
+      "symbole": "⚠️"
+    }
+  ]
+}
