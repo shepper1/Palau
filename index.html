@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palaos : Aventure au cœur du sanctuaire marin </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        template: {
+                            sable: '#F3E5AB',
+                            ocre: '#C66B3D',
+                            roche: '#2D2A26',
+                            ciel: '#4A6C6F',
+                            bg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #C66B3D;
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">Palaos : Aventure au cœur du sanctuaire marin</a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée au paradis du Pacifique</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Immersion et préparatifs</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 Le Lagon des Rock Islands</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Plongée mythique à Blue Corner</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Voie Lactée et Méduses d'Or</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Le ballet des raies Manta</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 L'île sauvage de Babeldaob</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Kayak au fil de l'eau</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Devoir de mémoire à Peleliu</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Détente ou dernière plongée</a>
+            
+                <a href="#jour-11" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J11 Culture et derniers achats</a>
+            
+                <a href="#jour-12" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J12 Dernier lever de soleil et départ</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-0">
+        
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <video autoplay muted loop playsinline 
+               poster="https://images.unsplash.com/photo-1579606946838-6db34433f3c0?q=80&w=2070"
+               class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4456988/4456988-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.3em] mb-4 uppercase text-sm font-semibold">Feuille de Route</p>
+            <h1 class="font-Playfair italic text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">Palau</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed">Palaos : Aventure au cœur du sanctuaire marin</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🗓️ 14 jours</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">💰 6000€ / pers</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🛬 Environ 25-30 heures avec escale(s) depuis Paris</span>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-20 relative">
+        
+        <div class="text-center mb-16">
+            <span class="text-template-ocre font-bold tracking-widest text-xs uppercase">Le Roadtrip</span>
+            <h2 class="font-serif text-4xl mt-2 text-template-roche">Votre Programme</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée au paradis du Pacifique</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après un long voyage depuis Marseille, vous atterrissez enfin sur l'île de Koror, la porte d'entrée des Palaos. Le choc thermique et la beauté luxuriante des paysages vous saisissent immédiatement. Cette première journée est dédiée à l'acclimatation et à une douce immersion dans l'atmosphère paisible de l'île. Reposez-vous et préparez-vous pour l'aventure qui vous attend.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛬 <strong>Arrivée et transfert</strong>: Récupérez vos bagages à l'aéroport international Roman Tmetuchl et rejoignez votre hébergement à Koror.</li>
+                            
+                                <li>🚶‍♂️ <strong>Première balade à Koror</strong>: Faites une promenade relaxante pour découvrir les environs de votre hôtel et dînez dans un restaurant local pour goûter aux saveurs du Pacifique.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">ℹ️ Décalage horaire</p>
+                                <p class="text-gray-700">Le décalage horaire avec la France est de +7 ou +8 heures. Hydratez-vous bien et essayez de vous adapter au rythme local dès le premier jour.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💵 Monnaie</p>
+                                <p class="text-gray-700">Pensez à retirer des dollars américains (USD) à l'aéroport, car les distributeurs peuvent être rares en dehors de Koror.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Immersion et préparatifs</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, vous plongez dans la culture locale et préparez vos futures excursions marines. C'est le moment idéal pour obtenir les permis nécessaires, visiter un musée fascinant et s'imprégner de l'histoire de l'archipel. La journée se termine par un magnifique coucher de soleil, promesse de découvertes à venir.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🎟️ <strong>Obtention des permis</strong>: Rendez-vous au centre d'information pour acheter votre permis Rock Islands/Jellyfish Lake, indispensable pour la plupart des excursions.</li>
+                            
+                                <li>🏛️ <strong>Visite du Belau National Museum</strong>: Découvrez l'histoire, la culture et l'art des Palaos dans le plus ancien musée de Micronésie.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📝 Permis obligatoire</p>
+                                <p class="text-gray-700">Le permis combiné Rock Islands / Jellyfish Lake est valable 10 jours. Conservez-le précieusement, il vous sera demandé à chaque sortie en mer.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Le Lagon des Rock Islands</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Embarquez pour votre première grande aventure au cœur du lagon sud des Rock Islands, un site classé au patrimoine mondial de l'UNESCO. Naviguez entre des centaines d'îlots calcaires recouverts de jungle et découvrez des fonds marins d'une richesse inouïe. C'est une journée de pur émerveillement, où chaque arrêt snorkeling révèle un nouvel écosystème coloré.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🐠 <strong>Snorkeling dans les jardins de corail</strong>: Explorez des sites comme Cemetery Reef, où des milliers de poissons tropicaux évoluent au milieu de coraux préservés.</li>
+                            
+                                <li>🏝️ <strong>Déjeuner sur une plage déserte</strong>: Profitez d'une pause sur un motu (îlot) de sable blanc, un moment privilégié pour savourer un repas face à des eaux turquoise.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🧴 Protection solaire</p>
+                                <p class="text-gray-700">Utilisez une crème solaire respectueuse des coraux (reef-safe) pour protéger à la fois votre peau et l'écosystème marin fragile.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Plongée mythique à Blue Corner</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Préparez-vous pour une expérience de plongée de renommée mondiale. Aujourd'hui, direction Blue Corner, un plateau océanique où les courants attirent une vie marine spectaculaire. C'est un ballet incessant de requins, de bancs de barracudas et de carangues. Une journée intense qui restera gravée dans votre mémoire de plongeur.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🌊 <strong>Plongée à Blue Corner</strong>: Accrochez-vous à votre crochet de récif et laissez le courant vous présenter un spectacle aquatique incroyable, avec des requins de récif gris patrouillant à quelques mètres.</li>
+                            
+                                <li>🐢 <strong>Exploration de Blue Holes</strong>: Pénétrez dans un système de grottes sous-marines spectaculaire dont le toit s'ouvre sur le ciel, créant des puits de lumière magiques.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🤿 Niveau requis</p>
+                                <p class="text-gray-700">Blue Corner est une plongée dérivante qui requiert un niveau avancé (Advanced Open Water) et une bonne aisance dans les courants.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📸 Photographie</p>
+                                <p class="text-gray-700">Un appareil photo sous-marin est indispensable pour immortaliser la densité de vie marine de ce site exceptionnel.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Voie Lactée et Méduses d'Or</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Cette journée combine deux des expériences les plus uniques des Palaos. Commencez par un bain de boue thérapeutique dans la "Voie Lactée", un lagon aux sédiments blancs réputés pour leurs bienfaits. Poursuivez avec une nage surréaliste au milieu de millions de méduses dorées non urticantes dans le célèbre Lac aux Méduses, un écosystème unique au monde.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>💧 <strong>Bain de boue au Milky Way</strong>: Enduisez-vous de la boue calcaire blanche du fond du lagon, une expérience amusante et un spa naturel à ciel ouvert.</li>
+                            
+                                <li>✨ <strong>Nage au Lac aux Méduses (Jellyfish Lake)</strong>: Vivez un moment magique en flottant paisiblement parmi des milliers de méduses dorées qui suivent la course du soleil.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🤫 Fragilité</p>
+                                <p class="text-gray-700">Au Lac aux Méduses, ne portez pas de crème solaire et palmez doucement pour ne pas blesser ces créatures extrêmement fragiles.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Le ballet des raies Manta</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Retour sous l'eau pour une rencontre majestueuse. Le German Channel, un passage creusé par les Allemands au début du 20ème siècle, est aujourd'hui une "station de nettoyage" pour les raies Manta. C'est l'un des meilleurs endroits au monde pour observer ces géants des mers dans leur environnement naturel.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>Manta <strong>Plongée à German Channel</strong>: Positionnez-vous sur le fond sableux et admirez le ballet gracieux des raies Manta venant se faire déparasiter par de petits poissons labres.</li>
+                            
+                                <li>🐠 <strong>Découverte de Big Drop-Off</strong>: Explorez un mur vertigineux tapissé de gorgones et de coraux mous, offrant un contraste saisissant avec le bleu profond de l'océan.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗓️ Meilleur moment</p>
+                                <p class="text-gray-700">Les chances d'observer les raies Manta sont plus élevées lors des marées montantes, renseignez-vous auprès de votre centre de plongée.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">L'île sauvage de Babeldaob</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Quittez le monde marin pour une journée d'exploration terrestre sur Babeldaob, la plus grande île des Palaos. Louez une voiture et parcourez la "Compact Road" qui serpente à travers une jungle dense et des villages traditionnels. Découvrez une autre facette de l'archipel, plus sauvage et authentique.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🗿 <strong>Visite des monolithes de Badrulchau</strong>: Marchez parmi d'anciennes colonnes de basalte mystérieuses, vestiges d'un important centre cérémoniel préhistorique.</li>
+                            
+                                <li>💦 <strong>Randonnée vers la cascade de Ngardmau</strong>: Traversez la jungle luxuriante pour atteindre la plus grande cascade des Palaos, où une baignade rafraîchissante vous attend.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚗 Location de voiture</p>
+                                <p class="text-gray-700">Louer une voiture est le meilleur moyen d'explorer Babeldaob à votre rythme. La route principale est en excellent état.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">👟 Équipement</p>
+                                <p class="text-gray-700">Prévoyez de bonnes chaussures de marche et un anti-moustiques pour la randonnée vers la cascade.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Kayak au fil de l'eau</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Découvrez les Rock Islands d'une manière plus intime et silencieuse : en kayak. Pagayez dans des baies abritées, faufilez-vous sous des arches naturelles et explorez des tunnels marins cachés. C'est une journée de connexion profonde avec la nature, loin du bruit des moteurs, où vous pourrez observer la faune et la flore de très près.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛶 <strong>Exploration de criques secrètes</strong>: Naviguez dans un labyrinthe d'îlots et découvrez des plages accessibles uniquement en kayak.</li>
+                            
+                                <li>🦀 <strong>Observation de la mangrove</strong>: Approchez-vous des écosystèmes de mangrove, nurserie pour de nombreuses espèces marines, et observez les créatures qui y vivent.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🧭 Excursion guidée</p>
+                                <p class="text-gray-700">Optez pour une excursion guidée en kayak pour découvrir les meilleurs spots et en apprendre plus sur la géologie et la biologie des Rock Islands.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Devoir de mémoire à Peleliu</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Changez radicalement d'ambiance avec une excursion sur l'île de Peleliu, théâtre de l'une des batailles les plus sanglantes de la Seconde Guerre mondiale dans le Pacifique. Le temps semble s'être arrêté ici. Visitez les vestiges de la guerre, des chars rouillés aux bunkers abandonnés, un témoignage poignant de l'histoire qui contraste avec la beauté naturelle de l'île.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>✈️ <strong>Exploration des vestiges de guerre</strong>: Découvrez des chars américains et japonais, des avions abattus et des bunkers envahis par la jungle, conservés comme un mémorial à ciel ouvert.</li>
+                            
+                                <li>📜 <strong>Visite du musée de Peleliu</strong>: Approfondissez vos connaissances sur la "Bataille de Peleliu" grâce aux artefacts et aux récits poignants présentés dans ce petit musée.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">😢 Respect</p>
+                                <p class="text-gray-700">Peleliu est un lieu de mémoire. Faites preuve de respect en ne touchant à rien et en vous imprégnant du silence des lieux.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Détente ou dernière plongée</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Pour cette journée, deux options s'offrent à vous selon vos envies. Les plongeurs passionnés pourront s'attaquer à Ulong Channel, une autre plongée dérivante spectaculaire. Ceux qui préfèrent se détendre pourront profiter d'une journée de farniente sur une belle plage ou au bord de la piscine de leur hôtel pour recharger les batteries.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🌊 <strong>Option 1 - Plongée à Ulong Channel</strong>: Laissez-vous porter par le courant dans ce canal réputé pour ses jardins de coraux laitue géants et ses nombreux requins.</li>
+                            
+                                <li>🍹 <strong>Option 2 - Journée détente</strong>: Profitez des plages de Koror, lisez un livre au bord de la piscine ou offrez-vous un massage pour une journée de pure relaxation.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⚖️ À vous de choisir</p>
+                                <p class="text-gray-700">Écoutez votre corps. Après plusieurs jours d'activités intenses, une journée de repos peut être très bénéfique.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-11" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 11</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Culture et derniers achats</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Profitez de cette dernière journée complète pour vous immerger une dernière fois dans la culture paluane et trouver des souvenirs uniques. Visitez un centre culturel pour admirer le savoir-faire des artisans locaux et flânez dans les boutiques de Koror. C'est le moment de choisir les trésors qui vous rappelleront ce voyage inoubliable.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🎨 <strong>Visite de l'Etpison Museum</strong>: Admirez des expositions d'art et d'artisanat local, et comprenez mieux les traditions et les légendes des Palaos.</li>
+                            
+                                <li>🎁 <strong>Shopping de souvenirs</strong>: Cherchez un "storyboard" en bois sculpté, l'artisanat le plus emblématique des Palaos, qui raconte une légende locale.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour11.jpg" class="w-full h-64 object-cover" alt="Jour 11">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🔨 Artisanat local</p>
+                                <p class="text-gray-700">Les storyboards sont des pièces uniques. Prenez le temps de discuter avec les artisans pour comprendre l'histoire derrière chaque sculpture.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-12" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 12</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Dernier lever de soleil et départ</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">C'est le jour du départ. Profitez d'un dernier petit-déjeuner face au lagon, en vous remémorant les moments forts de votre aventure. Selon l'horaire de votre vol, vous aurez peut-être le temps pour une dernière baignade. Il est ensuite temps de rejoindre l'aéroport, la tête remplie d'images de requins, de méduses dorées et de paysages à couper le souffle.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🌅 <strong>Dernier petit-déjeuner tropical</strong>: Savourez les fruits frais et les spécialités locales une dernière fois avec une vue imprenable sur l'océan.</li>
+                            
+                                <li>🛫 <strong>Transfert vers l'aéroport</strong>: Rejoignez l'aéroport international Roman Tmetuchl pour votre vol retour vers Marseille.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Palau/main/jour12.jpg" class="w-full h-64 object-cover" alt="Jour 12">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🧳 Bagages</p>
+                                <p class="text-gray-700">Vérifiez le poids de vos bagages, surtout si vous avez acheté des souvenirs artisanaux qui peuvent être lourds.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <footer id="pratique" class="bg-white border-t border-gray-200 pt-16 pb-10 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Les périodes idéales pour ce séjour sont les mois de novembre à avril.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>🧳</span> À savoir
+                </h4>
+                <ul class="text-sm text-gray-600 space-y-3">
+
+                        <li><strong>🌡️ :</strong> Climat tropical. Prévoir des vêtements légers, maillots de bain, protection solaire et un vêtement de pluie léger.</li>
+                    
+                        <li><strong>💵 :</strong> La monnaie est le dollar américain (USD). Les cartes de crédit sont acceptées dans les grands hôtels, mais prévoyez du liquide.</li>
+                    
+                        <li><strong>🛂 :</strong> Passeport valide 6 mois après le retour requis. Une taxe environnementale (100$) est à régler à l'arrivée.</li>
+                    
+                        <li><strong>📶 :</strong> Le Wi-Fi est souvent lent et coûteux. Pensez à acheter une carte SIM locale à l'arrivée pour un meilleur accès.</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2"><span>🔗</span> Liens Utiles</h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://shepper1.github.io/Palau/map.html" target="_blank" class="hover:underline flex items-center gap-2"><strong>🗺️ Carte</strong></a></li>
+                    
+                        <li><a href="https://www.pristineparadisepalau.com/" target="_blank" class="hover:underline flex items-center gap-2"><strong>📘 Pristine Paradise Palau</strong></a></li>
+                    
+                        <li><a href="https://www.samstours.com/" target="_blank" class="hover:underline flex items-center gap-2"><strong>🤿 Sam's Tours Palau</strong></a></li>
+                    
+                        <li><a href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/palaos/" target="_blank" class="hover:underline flex items-center gap-2"><strong>⚠️ France Diplomatie - Palaos</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-100 pt-8">
+            <p class="font-serif text-2xl text-template-roche mb-2">Palau</p>
+            <p class="text-xs text-gray-400">© 2025 - Roadmap</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Gestion de l'affichage du menu au scroll
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+
+        // 2. Détection de l'étape active
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+
+                    document.querySelectorAll('.nav-item-desktop').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (activeId.includes('jour') && linkHref === 'jour-1') {
+                            link.classList.add('text-template-ocre');
+                        } else if (activeId === 'pratique' && linkHref === 'pratique') {
+                            link.classList.add('text-template-ocre');
+                        } else {
+                            link.classList.remove('text-template-ocre');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('div[id^="jour-"], footer#pratique').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
